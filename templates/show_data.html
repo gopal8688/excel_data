@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center" border="2">
+    <tr>
+        <th>S_NO</th>
+        <th>PRODUCT</th>
+        <th>PROPOSAL_NO</th>
+        <th>INWARDNUMBER</th>
+        <th>CURRENTWORKSTEP</th>
+        <th>NAMES</th>
+        <th>CUSTOMER_NAME</th>
+        <th>UPDATE</th>
+        <th>DELETE</th>
+    </tr>
+
+    {% for x in qs%}
+    <tr>
+        <th>{{x.no}}</th>
+   <th> {{x.product}}</th>
+   <th> {{x.proposal_no}}</th>
+   <th> {{x.inwardnumber}}</th>
+   <th> {{x.currentworkstep}}</th>
+   <th> {{x.names}}</th>
+   <th> {{x.customer_names}}</th>
+        <th><a href="{%url 'update'%}?id={{x.id}}">update</a> </th>
+        <th><a href="{%url 'delete'%}?id={{x.id}}">delete</a> </th>
+    </tr>
+{%endfor%}
+
+
+</table>
+</body>
+</html>
